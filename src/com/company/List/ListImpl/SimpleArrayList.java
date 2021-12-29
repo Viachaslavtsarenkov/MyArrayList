@@ -6,15 +6,16 @@ import java.util.Comparator;
 
 public class SimpleArrayList<T> implements MyArrayList {
 
-    private static final int initialCapacity = 16;
+    private static final int INITIAL_CAPACITY = 16;
     private static int size = 0;
+    private Object[] array;
 
     public SimpleArrayList() {
-
+        array = new Object[INITIAL_CAPACITY];
     }
 
     public SimpleArrayList(int initialCapacity) {
-
+        array = new Object[initialCapacity];
     }
 
     @Override
@@ -59,6 +60,10 @@ public class SimpleArrayList<T> implements MyArrayList {
 
     @Override
     public void sort(Comparator comparator) {
+
+    }
+
+    private void resize() {
 
     }
 
