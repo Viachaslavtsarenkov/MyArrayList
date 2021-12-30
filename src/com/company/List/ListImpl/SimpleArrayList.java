@@ -2,6 +2,7 @@ package com.company.List.ListImpl;
 
 import com.company.List.MyArrayList;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class SimpleArrayList<T> implements MyArrayList<T>{
@@ -25,7 +26,17 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
 
     @Override
     public boolean add(int index, T element) {
-        return false;
+        if (index > size) {
+            return false;
+        }
+
+        for (int i = size + 1; i > index; --i) {
+            array[i] = array[i - 1];
+        }
+        
+        array[index] = element;
+        ++size;
+        return true;
     }
 
     @Override
