@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class SimpleArrayList<T> implements MyArrayList<T>{
 
     private static final int INITIAL_CAPACITY = 16;
-    private static int size = 0;
+    private int size = 0;
     private Object[] array;
 
     public SimpleArrayList() {
@@ -62,7 +62,7 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     public void sort(Comparator<? super  T> comparator) {
 
     }
-    
+
     private void resize() {
 
     }
