@@ -44,7 +44,7 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     }
 
     @Override
-    public int size() {
+    public int getSize() {
         return 0;
     }
 
@@ -67,6 +67,8 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     private void resize() {
 
     }
+
+    private
 
     @Override
     public String toString() {
