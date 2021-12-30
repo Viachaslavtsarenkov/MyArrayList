@@ -62,13 +62,10 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     public void sort(Comparator<? super  T> comparator) {
 
     }
-
-
+    
     private void resize() {
 
     }
-
-    private
 
     @Override
     public String toString() {
