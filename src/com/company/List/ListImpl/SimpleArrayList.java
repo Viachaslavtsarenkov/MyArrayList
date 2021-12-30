@@ -4,7 +4,7 @@ import com.company.List.MyArrayList;
 
 import java.util.Comparator;
 
-public class SimpleArrayList<T> implements MyArrayList {
+public class SimpleArrayList<T> implements MyArrayList<T>{
 
     private static final int INITIAL_CAPACITY = 16;
     private static int size = 0;
@@ -19,12 +19,12 @@ public class SimpleArrayList<T> implements MyArrayList {
     }
 
     @Override
-    public boolean add(Object element) {
+    public boolean add(T element) {
         return false;
     }
 
     @Override
-    public boolean add(int index, Object element) {
+    public boolean add(int index, T element) {
         return false;
     }
 
@@ -39,7 +39,7 @@ public class SimpleArrayList<T> implements MyArrayList {
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         return null;
     }
 
@@ -49,7 +49,7 @@ public class SimpleArrayList<T> implements MyArrayList {
     }
 
     @Override
-    public void set(int index, Object element) {
+    public void set(int index, T element) {
 
     }
 
@@ -59,9 +59,10 @@ public class SimpleArrayList<T> implements MyArrayList {
     }
 
     @Override
-    public void sort(Comparator comparator) {
+    public void sort(Comparator<? super  T> comparator) {
 
     }
+
 
     private void resize() {
 
