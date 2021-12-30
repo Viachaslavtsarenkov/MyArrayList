@@ -2,6 +2,7 @@ package com.company.List.ListImpl;
 
 import com.company.List.MyArrayList;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class SimpleArrayList<T> implements MyArrayList<T>{
@@ -25,7 +26,17 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
 
     @Override
     public boolean add(int index, T element) {
-        return false;
+        if (index > size) {
+            return false;
+        }
+
+        for (int i = size + 1; i > index; --i) {
+            array[i] = array[i - 1];
+        }
+
+        array[index] = element;
+        ++size;
+        return true;
     }
 
     @Override
@@ -34,8 +45,19 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     }
 
     @Override
-    public boolean remove(Object o) {
-        return false;
+    public boolean remove(T o) {
+        int index = findIndexElement(o);
+
+        if(index < 0) {
+          return false;
+        }
+
+        for(int i = index; i < size; ++i) {
+            array[i] = array[i + 1];
+        }
+
+        --size;
+        return true;
     }
 
     @Override
@@ -65,6 +87,17 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     
     private void resize() {
 
+    }
+
+    private int findIndexElement(T element) {
+        int index = - 1;
+        for(int i = 0; i < size; ++i) {
+            if(array[i].equals(element)) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     @Override
