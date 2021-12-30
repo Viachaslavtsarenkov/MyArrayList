@@ -33,7 +33,7 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
         for (int i = size + 1; i > index; --i) {
             array[i] = array[i - 1];
         }
-        
+
         array[index] = element;
         ++size;
         return true;
@@ -45,8 +45,19 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
     }
 
     @Override
-    public boolean remove(Object o) {
-        return false;
+    public boolean remove(T o) {
+        int index = findIndexElement(o);
+
+        if(index < 0) {
+          return false;
+        }
+
+        for(int i = index; i < size; ++i) {
+            array[i] = array[i + 1];
+        }
+
+        --size;
+        return true;
     }
 
     @Override
@@ -77,6 +88,17 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
 
     private void resize() {
 
+    }
+
+    private int findIndexElement(T element) {
+        int index = - 1;
+        for(int i = 0; i < size; ++i) {
+            if(array[i].equals(element)) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     @Override
