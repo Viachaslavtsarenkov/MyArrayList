@@ -40,7 +40,7 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
 
     @Override
     public boolean remove(int index) {
-        if (index < 0)
+        if (index < 0 || index >= size)
             return false;
         for (int i = index; i < size; i++) {
             array[i] = array[i + 1];
