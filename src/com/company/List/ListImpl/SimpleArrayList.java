@@ -20,19 +20,22 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
 
     @Override
     public boolean add(T element) {
-        return false;
+        if (array.length * 0.75 < size) {
+            resize();
+        }
+        array[size + 1] = element;
+        return true;
     }
 
     @Override
     public boolean add(int index, T element) {
+        if (array.length * 0.75 < size) {
+            resize();
+        }
         if (index > size) {
             return false;
         }
-
-        for (int i = size + 1; i > index; --i) {
-            array[i] = array[i - 1];
-        }
-
+        shiftRight(size, index);
         array[index] = element;
         ++size;
         return true;
@@ -40,12 +43,11 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
 
     @Override
     public boolean remove(int index) {
-        if (index < 0 || index >= size)
+        if(index < 0 || index > size) {
             return false;
-        for (int i = index; i < size; i++) {
-            array[i] = array[i + 1];
         }
-        size--;
+        shiftLeft(index);
+        --size;
         return true;
     }
 
@@ -56,30 +58,33 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         if (index < 0) {
             return false;
         }
-
+        shiftLeft(index);
         for (int i = index; i < size; ++i) {
             array[i] = array[i + 1];
         }
-
         --size;
         return true;
     }
 
     @Override
     public T get(int index) {
-        if (index >= size)
+        if(size < index) {
             throw new IndexOutOfBoundsException();
+        }
         return (T) array[index];
     }
 
     @Override
     public int getSize() {
-        return 0;
+        return size;
     }
 
     @Override
     public void set(int index, T element) {
-
+        if(size < index) {
+            throw new IndexOutOfBoundsException();
+        }
+        array[index] = element;
     }
 
     @Override
@@ -102,7 +107,23 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
     }
 
     private void resize() {
+        Object[] newArray = new Object[size * 2];
+        for (int i = 0; i < size; ++i) {
+            newArray[i] = array[i + 1];
+        }
+        array = newArray;
+    }
 
+    private void shiftLeft(int index) {
+        for(int i = index; i < size; ++i) {
+            array[i] = array[i + 1];
+        }
+    }
+
+    private void shiftRight(int size, int index) {
+        for (int i = size + 1; i > index; --i) {
+            array[i] = array[i - 1];
+        }
     }
 
     private int findIndexElement(T element) {

@@ -1,13 +1,19 @@
 package com.company;
 
 import com.company.List.ListImpl.SimpleArrayList;
+<<<<<<< HEAD
+=======
 import com.company.List.MyArrayList;
 
 import java.util.Comparator;
+>>>>>>> main
 
 public class Main {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
+
+=======
 	// write your code here
         MyArrayList<Person> simpleArrayList = new SimpleArrayList<>();
 
@@ -40,5 +46,6 @@ public class Main {
         System.out.println("\n*** deleting element with index 4 (should return false) ***");
         System.out.println(simpleArrayList.remove(4));
         System.out.println(simpleArrayList);
+>>>>>>> main
     }
 }
