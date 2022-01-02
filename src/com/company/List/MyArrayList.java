@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 public interface MyArrayList<T> extends Serializable {
-    
+
     /**
      * Adds element into list
      *

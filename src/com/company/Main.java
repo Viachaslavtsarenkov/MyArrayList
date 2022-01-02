@@ -14,6 +14,7 @@ public class Main {
         MyArrayList<Person> simpleArrayList = new SimpleArrayList<>();
 
         // добавляем объекты Person в коллекцию по индексу
+        Person person = new Person("George", 22);
         simpleArrayList.add(0, new Person("John", 33));
         simpleArrayList.add(1, new Person("Adam", 21));
         simpleArrayList.add(2, new Person("Adam", 28));
@@ -21,6 +22,7 @@ public class Main {
         simpleArrayList.add(4, new Person("Thom", 26));
         // добавляем объекты Person в конец коллекции
         simpleArrayList.add(new Person("Kate", 26));
+        simpleArrayList.add(person);
         System.out.println("Initial array list");
         System.out.println(simpleArrayList);
 
@@ -47,6 +49,10 @@ public class Main {
         // пытаемся удалить несуществующий элемент с индексом 4
         System.out.println("\n*** deleting element with index 4 (should return false) ***");
         System.out.println(simpleArrayList.remove(4));
+        System.out.println(simpleArrayList);
+
+        //Удаляем элемент
+        System.out.println(simpleArrayList.remove(person));
         System.out.println(simpleArrayList);
 
     }

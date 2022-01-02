@@ -107,6 +107,7 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         for (int i = 0; i < size; ++i) {
             newArray[i] = array[i + 1];
         }
+        --size;
         array = newArray;
     }
 
