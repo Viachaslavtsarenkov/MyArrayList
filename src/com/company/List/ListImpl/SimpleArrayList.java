@@ -45,7 +45,6 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         for (int i = index; i < size; i++) {
             array[i] = array[i + 1];
         }
-
         size--;
         return true;
     }
