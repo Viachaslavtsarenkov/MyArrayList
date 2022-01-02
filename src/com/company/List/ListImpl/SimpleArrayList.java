@@ -23,7 +23,8 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         if (array.length * 0.75 < size) {
             resize();
         }
-        array[size + 1] = element;
+        array[size] = element;
+        ++size;
         return true;
     }
 
@@ -103,7 +104,6 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
                 }
             }
         }
-
     }
 
     private void resize() {

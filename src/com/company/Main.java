@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.List.Collections;
 import com.company.List.ListImpl.SimpleArrayList;
 import com.company.List.MyArrayList;
 
@@ -15,7 +16,7 @@ public class Main {
         // добавляем объекты Person в коллекцию по индексу
         simpleArrayList.add(0, new Person("John", 33));
         simpleArrayList.add(1, new Person("Adam", 21));
-        simpleArrayList.add(2, new Person("Adam", 23));
+        simpleArrayList.add(2, new Person("Adam", 28));
         simpleArrayList.add(3, new Person("David", 29));
         simpleArrayList.add(4, new Person("Thom", 26));
         // добавляем объекты Person в конец коллекции
@@ -23,6 +24,10 @@ public class Main {
         System.out.println("Initial array list");
         System.out.println(simpleArrayList);
 
+
+        //сортируем по имени с помощь реализации интерфейса Comparable
+        System.out.println("\n*** sort by name with using Comparable***");
+        Collections.sort(simpleArrayList);
 
         // сортируем людей по возрасту с помощью своего компаратора
         System.out.println("\n*** sort by age ***");
@@ -43,5 +48,6 @@ public class Main {
         System.out.println("\n*** deleting element with index 4 (should return false) ***");
         System.out.println(simpleArrayList.remove(4));
         System.out.println(simpleArrayList);
+
     }
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
 
@@ -28,5 +28,10 @@ public class Person {
     @Override
     public String toString() {
         return name + "(" + age + " years)";
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return  this.getName().compareTo(o.getName());
     }
 }
