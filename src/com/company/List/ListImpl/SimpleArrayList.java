@@ -89,11 +89,6 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
     }
 
     @Override
-    public void sort() {
-
-    }
-
-    @Override
     public void sort(Comparator<? super T> comparator) {
         for (int i = size - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {

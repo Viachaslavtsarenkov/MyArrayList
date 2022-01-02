@@ -14,7 +14,6 @@ public interface Collections{
                 }
             }
         }
-        System.out.println(array.toString());
-        return null;
+        return array;
     }
 }

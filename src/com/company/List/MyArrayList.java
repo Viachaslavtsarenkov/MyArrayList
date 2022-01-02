@@ -12,6 +12,5 @@ public interface MyArrayList<T> extends Serializable {
     T get(int index);
     int getSize();
     void set(int index, T element);
-    void sort();
     void sort(Comparator<? super T> comparator);
 }
