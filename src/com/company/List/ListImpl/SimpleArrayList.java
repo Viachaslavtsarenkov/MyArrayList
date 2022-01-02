@@ -43,21 +43,11 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
 
     @Override
     public boolean remove(int index) {
-<<<<<<< HEAD
         if(index < 0 || index > size) {
             return false;
         }
         shiftLeft(index);
         --size;
-=======
-        if (index < 0 || index >= size)
-            return false;
-        for (int i = index; i < size; i++) {
-            array[i] = array[i + 1];
-        }
-
-        size--;
->>>>>>> main
         return true;
     }
 
@@ -68,39 +58,25 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         if (index < 0) {
             return false;
         }
-<<<<<<< HEAD
         shiftLeft(index);
-=======
-
         for (int i = index; i < size; ++i) {
             array[i] = array[i + 1];
         }
-
->>>>>>> main
         --size;
         return true;
     }
 
     @Override
     public T get(int index) {
-<<<<<<< HEAD
         if(size < index) {
             throw new IndexOutOfBoundsException();
         }
-=======
-        if (index >= size)
-            throw new IndexOutOfBoundsException();
->>>>>>> main
         return (T) array[index];
     }
 
     @Override
     public int getSize() {
-<<<<<<< HEAD
         return size;
-=======
-        return 0;
->>>>>>> main
     }
 
     @Override
