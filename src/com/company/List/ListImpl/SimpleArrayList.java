@@ -64,6 +64,7 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         return true;
     }
 
+
     @Override
     public T get(int index) {
         if(size < index) {
@@ -98,6 +99,9 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         }
     }
 
+    /**
+     * Change list size
+     * **/
     private void resize() {
         Object[] newArray = new Object[size * 2];
         for (int i = 0; i < size; ++i) {
@@ -106,18 +110,29 @@ public class SimpleArrayList<T> implements MyArrayList<T> {
         array = newArray;
     }
 
+     /**
+     * allows to shift elements to the left for removing
+     * **/
     private void shiftLeft(int index) {
         for(int i = index; i < size; ++i) {
             array[i] = array[i + 1];
         }
     }
 
+    /**
+     * allows to shift elements to the left for adding a new
+     * **/
     private void shiftRight(int size, int index) {
         for (int i = size + 1; i > index; --i) {
             array[i] = array[i - 1];
         }
     }
 
+    /**
+     * Gets index of the element
+     *
+     * @param element contains element
+     * **/
     private int findIndexElement(T element) {
         int index = -1;
         for (int i = 0; i < size; ++i) {
