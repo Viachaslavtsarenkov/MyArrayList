@@ -10,7 +10,7 @@ public interface MyArrayList<T> extends Serializable {
     boolean remove(int index);
     boolean remove(T o);
     T get(int index);
-    int size();
+    int getSize();
     void set(int index, T element);
     void sort();
     void sort(Comparator<? super T> comparator);
