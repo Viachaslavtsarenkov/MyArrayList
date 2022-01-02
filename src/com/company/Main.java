@@ -40,6 +40,5 @@ public class Main {
         System.out.println("\n*** deleting element with index 4 (should return false) ***");
         System.out.println(simpleArrayList.remove(4));
         System.out.println(simpleArrayList);
->>>>>>> main
     }
 }
