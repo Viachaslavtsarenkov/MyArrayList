@@ -12,12 +12,14 @@ public class Main {
 	// write your code here
         MyArrayList<Person> simpleArrayList = new SimpleArrayList<>();
 
-        // добавляем объекты Person в коллекцию
+        // добавляем объекты Person в коллекцию по индексу
         simpleArrayList.add(0, new Person("John", 33));
         simpleArrayList.add(1, new Person("Adam", 21));
         simpleArrayList.add(2, new Person("Adam", 23));
         simpleArrayList.add(3, new Person("David", 29));
         simpleArrayList.add(4, new Person("Thom", 26));
+        // добавляем объекты Person в конец коллекции
+        simpleArrayList.add(new Person("Kate", 26));
         System.out.println("Initial array list");
         System.out.println(simpleArrayList);
 
