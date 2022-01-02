@@ -30,6 +30,9 @@ public class SimpleArrayList<T> implements MyArrayList<T>{
 
     @Override
     public boolean add(int index, T element) {
+        if (array.length * 0.75 < size) {
+            resize();
+        }
         if (index > size) {
             return false;
         }
